@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test select</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="controllers/employee.js"></script>
+</head>
+<body>
+<html ng-app="employeeapp">
+<body>
+<div ng-controller="employeeinfo">
+    <p>selected item is : {{selectedItem}}</p>
+    <p> age of selected item is : {{selectedItem.departmentname}} </p>
+    <select ng-model="selectedItem" ng-options="dept.departmentname for dept in department">
+    </select>
+</div>
+</body>
+</html>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="employeeapp">
+<head>
+  <meta charset="utf-8">
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+  <script src="controllers/employee.js"></script>
+ <!-- <script src="controllers/department.js"></script>-->
+</head>
+<body>
+<div id="header">
+<h2>Employee Management</h2>
+</div>
+<div><br></div>
+<div><br></div>
+<div ng-controller="employeeinfo">
+  <select ng-init="mydept = department[0]" ng-model="mydept" ng-options="dept.departmentname for dept in department"></select>
+  <table class="table table-striped table-condensed table-hover">
+    <thead>
+    <tr>
+      <th>Title</th>
+      <th>First Name</th>
+      <th>Middle Name</th>
+      <th>Last Name</th>
+      <th>Birth Date</th>
+      <th>Qualification</th>
+      <th>Specialty</th>
+      <th>Department</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="emp in employee | filter : {department:mydept.filterparam}">
+      <td>{{emp.title}}</td>
+      <td>{{emp.firstName}}</td>
+      <td>{{emp.middleName}}</td>
+      <td>{{emp.lastName}}</td>
+      <td>{{emp.dob}}</td>
+      <td>{{emp.qualification}}</td>
+      <td>{{emp.specialty}}</td>
+      <td>{{emp.department}}</td>
+    </tr>
+    </tbody>
+    </table>
+</div>
+<div id="footer">
+  Copyright © AngularJSTraining.com
+</div>
+</body>
+</html>
